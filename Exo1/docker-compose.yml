@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=m
+    restart: always
+
+  nginx2:
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=m
+    restart: always
+
+  nginx3:
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=m
+    restart: always
+
+  nginx4:
+    image: nginx
+    environment:
+      - VIRTUAL_HOST=m
+    restart: always
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "8080:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+    restart: always
